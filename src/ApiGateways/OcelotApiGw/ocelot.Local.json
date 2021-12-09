@@ -2,7 +2,7 @@
   "Routes": [
     //Catalog API
     {
-      "DownstreamPathTemplate": "api/v1/Catalog",
+      "DownstreamPathTemplate": "/api/v1/Catalog",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -14,7 +14,7 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
     },
     {
-      "DownstreamPathTemplate": "api/v1/Catalog/{id}",
+      "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -26,7 +26,7 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "api/v1/Catalog/GetProductByCategory/{category}",
+      "DownstreamPathTemplate": "/api/v1/Catalog/GetProductByCategory/{category}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -39,7 +39,7 @@
     },
     //Basket API
     {
-      "DownstreamPathTemplate": "api/v1/Basket/{userName}",
+      "DownstreamPathTemplate": "/api/v1/Basket/{userName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -51,7 +51,7 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "api/v1/Basket",
+      "DownstreamPathTemplate": "/api/v1/Basket",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -63,7 +63,7 @@
       "UpstreamHttpMethod": [ "POST" ]
     },
     {
-      "DownstreamPathTemplate": "api/v1/Basket/Checkout",
+      "DownstreamPathTemplate": "/api/v1/Basket/Checkout",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -76,7 +76,7 @@
     },
     //Discount API
     {
-      "DownstreamPathTemplate": "api/v1/Discount",
+      "DownstreamPathTemplate": "/api/v1/Discount",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -88,7 +88,7 @@
       "UpstreamHttpMethod": [ "PUT", "POST" ]
     },
     {
-      "DownstreamPathTemplate": "api/v1/Discount/{productName}",
+      "DownstreamPathTemplate": "/api/v1/Discount/{productName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -101,7 +101,7 @@
     },
     //Order API
     {
-      "DownstreamPathTemplate": "api/v1/Order/{userName}",
+      "DownstreamPathTemplate": "/api/v1/Order/{userName}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
