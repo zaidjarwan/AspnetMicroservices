@@ -1,4 +1,5 @@
-﻿using AspnetRunBasics.Models;
+﻿using AspnetRunBasics.Extensions;
+using AspnetRunBasics.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -14,24 +15,33 @@ namespace AspnetRunBasics.Services
         {
             this._httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         }
-        public Task<CatalogModel> CreateCatalog(CatalogModel model)
+        public async Task<CatalogModel> CreateCatalog(CatalogModel model)
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.PostAsJson("/Catalog", model);
+            if (response.IsSuccessStatusCode)
+                return await response.ReadContentAs<CatalogModel>();
+            else
+            {
+                throw new Exception($"Something went wrong when calling api");
+            }
         }
 
-        public Task<IEnumerable<CatalogModel>> GetCatalog()
+        public async Task<IEnumerable<CatalogModel>> GetCatalog()
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.GetAsync("/Catalog");
+            return await response.ReadContentAs<List<CatalogModel>>();
         }
 
-        public Task<CatalogModel> GetCatalog(string id)
+        public async Task<CatalogModel> GetCatalog(string id)
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.GetAsync($"/Catalog/{id}");
+            return await response.ReadContentAs<CatalogModel>();
         }
 
-        public Task<IEnumerable<CatalogModel>> GetCatalogByCategory(string category)
+        public async Task<IEnumerable<CatalogModel>> GetCatalogByCategory(string category)
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.GetAsync($"/Catalog/GetProductByCategory/{category}");
+            return await response.ReadContentAs<List<CatalogModel>>();
         }
     }
 }
